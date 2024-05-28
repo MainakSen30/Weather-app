@@ -27,7 +27,7 @@ async function getWeatherData(city) {
     console.log(response);
 
     if (!response.ok) {
-        throw new Error("Could nott fetch weather data");
+        throw new Error("Could not fetch weather data");
     }
     return await response.json();
 }
@@ -69,35 +69,27 @@ function getWeatherEmoji(WeatherId) {
     switch (true) {
         case (WeatherId >= 200 && WeatherId < 300):
             return "⛈️";
-            break;
         
         case (WeatherId >= 300 && WeatherId < 400):
             return "🌧️";
-            break;
-
+        
         case (WeatherId >= 500 && WeatherId < 600):
             return "🌧️";
-            break;
     
         case (WeatherId >= 600 && WeatherId < 700):
             return "❄️";
-            break;
-
+        
         case (WeatherId >= 700 && WeatherId < 800):
             return "🌫️";
-            break;
-
+        
         case (WeatherId ===  800):
             return "☀️";
-            break;
-
+        
         case (WeatherId >= 801 && WeatherId < 810):
             return "☁️";
-            break;
-
+        
         default:
             return "❓";
-            break;
     }
 }
 
